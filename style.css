@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* flex-wrap: wrap; will wrap content inside container if the content can't fit on one row */
+
+
+.flex-container {
+  display: flex;
+  background-color: black;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: white;
+  color: black;
+  margin: 10px;
+}
+
+
+.flex-container-1 {
+  display: flex;
+  background-color: blue;
+  justify-content: start;
+  align-items: center;
+}
+
+.item1 {
+  /* flex basis can change the size of an item inside a container */
+  flex-basis: 100px;
+  height: 100px;
+  background: white;
+  color: black;
+  margin: 10px;
+}
+
+.item1:nth-of-type(2) {
+  flex-basis: 200px;
+}
+
+/* flex grow can change increase size of an item inside a container */
+
+.flex-container-2 {
+  display: flex;
+  background-color: red;
+  justify-content: start;
+  align-items: center;
+}
+
+.item2 {
+  flex-basis: 100px;
+  height: 100px;
+  background: blue;
+  color: white;
+  margin: 10px;
+}
+
+/* flex grow can change increase size of an item inside a container. In this case the first item is smaller than the 2, and the 3 is larger than 2. So as you make screen responsive, the items will adjust in size */
+
+.item2:nth-of-type(1) {
+  flex-grow: 3;
+}
+
+.item2:nth-of-type(2) {
+  flex-grow: 1;
+}
+
+.item2:nth-of-type(3) {
+  flex-grow: 2;
+}
+
+.flex-container-3 {
+  display: flex;
+  background-color: green;
+  justify-content: start;
+  align-items: center;
+}
+
+.item3 {
+  /* 100px flex-basis means this is the smallest the item can be and then grows according to responsiveness */
+
+  flex-basis: 100px;
+  flex-grow: 1;
+  height: 100px;
+  background: black;
+  color: white;
+  margin: 10px;
+}
+
+.flex-container-4 {
+  display: flex;
+  background-color: green;
+  justify-content: start;
+  align-items: center;
+}
+
+.item4 {
+  /* 300px flex-basis means this is the biggest the item can be and then shrinks according to responsiveness */
+  flex-basis: 300px;
+  flex-shrink: 1;
+  height: 100px;
+  background: black;
+  color: white;
+  margin: 10px;
+}
+
+
+.flex-container-5 {
+  display: flex;
+  background-color: purple;
+  justify-content: start;
+  align-items: center;
+}
+
+.item5 {
+  /* by just putting flex then adding 3 values, this will make the 1st number flex-grow, the 2nd number flex-shrink and the 3rd number flex-basis */
+  /* flex: 1 0 100px; */
+  /* if you want all items to be the same size, just put flex 1 */
+  flex: 1;
+  height: 100px;
+  background: yellow;
+  color: black;
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+  padding: 15px;
+}
+h3 {
+  text-align: center;
+}
